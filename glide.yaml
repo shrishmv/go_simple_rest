@@ -1,0 +1,10 @@
+package: go_simple_rest
+import:
+- package: github.com/fatih/structs
+  version: v1.1.0
+- package: github.com/labstack/echo
+  version: v4.1.16
+  subpackages:
+  - middleware
+- package: github.com/spf13/viper
+  version: v1.6.2

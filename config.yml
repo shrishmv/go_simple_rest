@@ -1,0 +1,14 @@
+---
+parent: platform
+serviceName: go_simple_rest
+language: golang
+lint:
+  ignoreFailure: "false"
+  golang:
+    command: |
+       gometalinter --aggregate --exclude=gotype --fast --vendor --deadline=300s --enable=testify --enable=test --enable=gofmt --enable=goimports --enable=gosimple  --enable=misspell --enable=nakedret --enable=unparam --enable=unused --enable=safesql --enable=staticcheck --disable=gas --checkstyle . ./...
+build:
+  golang:
+    source: "main.go"
+    command:
+      CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -o go_simple_rest -v -ldflags '-w' src/main.go
