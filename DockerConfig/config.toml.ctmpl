@@ -1,0 +1,7 @@
+{{$appenv := env "ENVIRONMENT"}}
+[general]
+config = "{{key (printf "callinsights/%s/stats_service_api/config/general/config" $appenv)}}"
+server_port = "{{key (printf "callinsights/%s/stats_service_api/config/general/server_port" $appenv)}}"
+version = "{{key (printf "callinsights/%s/stats_service_api/config/general/version" $appenv)}}"
+[log]
+log_file = "{{key (printf "callinsights/%s/stats_service_api/config/log/log_file" $appenv)}}"
